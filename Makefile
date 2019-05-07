@@ -609,7 +609,7 @@ endif
 # my command
 .PHONY: docker send
 docker:
-	docker run -e keymap=my_layout -e keyboard=ergodox_ez --rm -v $(shell pwd):/qmk:rw edasque/qmk_firmware
+	docker run -e KEYMAP=my_layout -e KEYBOARD=ergodox_ez --rm -v $(shell pwd):/qmk_firmware:rw edasque/qmk_firmware
 send:
 	teensy_loader_cli --mcu=atmega32u4 -w .build/ergodox_ez_my_layout.hex
 
